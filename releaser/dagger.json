@@ -1,0 +1,12 @@
+{
+  "name": "releaser",
+  "sdk": "go",
+  "dependencies": [
+    {
+      "name": "archivist",
+      "source": "github.com/sagikazarmark/daggerverse/archivist@7baa002a493b8e3fbd8dfe1d37b5ee3f2ea246b4"
+    }
+  ],
+  "source": ".",
+  "engineVersion": "v0.10.2"
+}

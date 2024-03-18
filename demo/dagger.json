@@ -1,0 +1,20 @@
+{
+  "name": "demo",
+  "sdk": "go",
+  "dependencies": [
+    {
+      "name": "gobinary",
+      "source": "../builders/gobinary"
+    },
+    {
+      "name": "releaser",
+      "source": "../releaser"
+    },
+    {
+      "name": "staticfile",
+      "source": "../builders/staticfile"
+    }
+  ],
+  "source": ".",
+  "engineVersion": "v0.10.2"
+}
