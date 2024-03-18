@@ -3,6 +3,10 @@
   "sdk": "go",
   "dependencies": [
     {
+      "name": "github",
+      "source": "../publishers/github"
+    },
+    {
       "name": "gobinary",
       "source": "../builders/gobinary"
     },

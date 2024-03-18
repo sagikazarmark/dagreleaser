@@ -45,9 +45,11 @@ type Archiver interface {
 }
 
 // Publisher publishes release artifacts.
-// type Publisher interface {
-// 	Publish(artifacts []*File)
-// }
+type Publisher interface {
+	DaggerObject
+
+	Publish(ctx context.Context, artifacts []*File) error
+}
 
 func (m *Releaser) Release(
 	name string,
@@ -89,10 +91,22 @@ func (m *Releaser) Release(
 	}
 
 	return archives
+}
 
-	// Publish
+func (m *Releaser) ReleaseAndPublish(
+	ctx context.Context,
+	name string,
+	version string,
+	platforms []string,
 
-	// return nil
+	fileBuilders []FileBuilder,
+	directoryBuilders []DirectoryBuilder,
+
+	publisher Publisher,
+) error {
+	archives := m.Release(name, version, platforms, fileBuilders, directoryBuilders)
+
+	return publisher.Publish(ctx, archives)
 }
 
 func (m *Releaser) selectArchiver(platform Platform) Archiver {

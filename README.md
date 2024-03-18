@@ -8,8 +8,16 @@ It uses the experimental interface support.
 
 ## Demo
 
+Building a release:
+
 ```shell
 cd demo
-dagger call demo -o output
+dagger call release -o output
 open output
+```
+
+Publishing to GitHub:
+
+```shell
+dagger call release-and-publish --token env:GITHUB_TOKEN
 ```
